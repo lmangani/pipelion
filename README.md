@@ -1,8 +1,4 @@
 # pipeLion
-Nothing to see here. Do not try this yet.
+Nothing to see here. Do not try this.
 
 
-## Test
-```
-node index.js '.multiply(100)' '{"test": 100}'
-```
