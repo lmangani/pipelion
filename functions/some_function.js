@@ -1,9 +1,10 @@
 module.exports = (data, args) => {
-  var parameter = args.name;
-    if(data.test) {
-      if(data)
-        data.test = data.test * 2;
-        data.param = parameter;
-    }
-    return data;
+  for(let item of args) {
+    data[item.name] = item.value.value;
+  }
+  if(data.test) {
+    if(data)
+      data.test = data.test * 2;
+  }
+  return data;
 }
