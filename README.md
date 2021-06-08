@@ -3,7 +3,9 @@
 # pipeLion
 Pipelion is a simple, extensible, one-line expression language to pipe data through processing and transform functions. Pipelion stems from the guts of `timelion` and `kable` extending their caged potential to other projects and use-cases.
 
-## pipeLion Expressions
+* status: experimental, unstable
+
+### pipeLion Expressions
 Pipelion functions are chained to each other, just like streams.
 
 ##### Data Input
@@ -25,3 +27,11 @@ Pipelion functions are chained to each other, just like streams.
 
 
 
+### Iinstallation
+```
+npm install -g pipelion
+```
+#### Usage
+```
+pipelion {expression} {input}
+```
