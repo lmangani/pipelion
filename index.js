@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 chainparser = require('timelion-chain-parser');
 const { invoke, invokeChain, loadFunctions } = require('./lib/chain.js');
 var args = process.argv.slice(2);

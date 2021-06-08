@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Programmable Pipelining Beast",
   "main": "index.js",
+  "bin": {
+    "pipelion": "./index.js"
+  },
   "directories": {
     "lib": "lib"
   },
