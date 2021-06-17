@@ -20,7 +20,7 @@ Flatten each object from nested to parent_child_child: value
 const debug = true;
 
 module.exports = (input, args) => {
-  //if(debug)console.log('receiving', input)
+  if(debug)console.log('receiving', input)
 
   /* iterate over each object, build a new object
     flatten all the levels of children for values that are arrays or objects
@@ -42,7 +42,7 @@ function flattenObject (object, parentString) {
     if(typeof object[propName] == "object") {
       console.log("object : ", propName, object[propName]);
       var flattendObject = flattenObject(object[propName], parentString+"_"+propName)
-      flatObject = 
+      flatObject = Object.assign({}, flattendObject, flatObject);
     } else if (typeof object[propName] == "array") {
       console.log("array : ", propName, object[propName]);
     } else {
