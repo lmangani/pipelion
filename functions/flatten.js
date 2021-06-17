@@ -22,32 +22,44 @@ const debug = true;
 module.exports = (input, args) => {
   if(debug)console.log('receiving', input)
 
+  var output = [];
   /* iterate over each object, build a new object
     flatten all the levels of children for values that are arrays or objects
     */
   for(let object of input) {
+    if(debug)console.log('BEFORE', object);
     var parentString = '';
-    let flatObject = flattenObject(object, parentString);
+    var firstLevel = true;
+    let flatObject = flattenObject(object, parentString, firstLevel);
+    output.push(flatObject);
+    if(debug)console.log('AFTER', flatObject);
   }
 
-
-  //return input;
+  return output;
 }
 
-function flattenObject (object, parentString) {
+function flattenObject (object, parentString, first) {
   var flatObject = {};
   /* iterate over object and check each prop against type */
   for(let propName in object) {
     //console.log(propName, typeof object[propName]);
     if(typeof object[propName] == "object") {
-      console.log("object : ", propName, object[propName]);
-      var flattendObject = flattenObject(object[propName], parentString+"_"+propName)
+      if(debug)console.log("object : ", propName, object[propName]);
+      if(first) {
+        var flattendObject = flattenObject(object[propName], propName, false)
+      } else {
+        var flattendObject = flattenObject(object[propName], parentString+"_"+propName, false)
+      }
       flatObject = Object.assign({}, flattendObject, flatObject);
-    } else if (typeof object[propName] == "array") {
-      console.log("array : ", propName, object[propName]);
     } else {
-      flatObject[propName] = object[propName]
+      if(debug)console.log("value : ", propName, object[propName]);
+      if(first) {
+        flatObject[propName] = object[propName]
+      } else {
+        flatObject[parentString+"_"+propName] = object[propName]
+      }
     }
   }
-  console.log("applied: ", flatObject);
+  if(debug)console.log("applied: ", flatObject);
+  return flatObject;
 }

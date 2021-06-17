@@ -4,13 +4,13 @@ Fetch data from an url
 */
 
 const https = require('https')
-const debug = true;
+const debug = false;
 
 module.exports = async (data, args) => {
-  console.log(data, args)
+  if(debug)console.log(data, args)
   var output = [];
   if(args[0].type == "literal"){
-    if(debug)console.log('calling', args[0].value);
+    console.log('calling\n', args[0].value+"\n", "This may take some time \n");
     return new Promise(function(resolve, reject){
       var request = https.request(args[0].value);
       request.on('response', async function(res) {
