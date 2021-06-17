@@ -3,11 +3,12 @@
 Returns the Average of a chosen fieldName=fieldValue combination
 
  */
-const debug = false;
+const debug = true;
 
 module.exports = (input, args) => {
   /* extract matrix data from loki input */
-  var data = input.data.result;
+  if(debug)console.log('receiving', input)
+  var data = input.response.data.result;
 
   /* check if args were provided to args */
 
