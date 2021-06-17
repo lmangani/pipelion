@@ -58,3 +58,5 @@ pipelion ".file(string.json)"
 pipelion ".file(loki.json).parseLoki().flatten()"
 
 pipelion ".fetch('https://api.crossref.org/works?query.author=terry_pratchett').flatten()"
+
+pipelion ".fetch(https://jsonplaceholder.typicode.com/posts).filter(url=true)"
