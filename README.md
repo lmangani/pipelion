@@ -54,9 +54,12 @@ Pipelion has a few small examples
 pipelion ".file(string.json)"
 
 #### Consuming objects
-
+```bash
 pipelion ".file(loki.json).parseLoki().flatten()"
-
+```
+```bash
 pipelion ".fetch('https://api.crossref.org/works?query.author=terry_pratchett').flatten()"
-
+```
+```bash
 pipelion ".fetch(https://jsonplaceholder.typicode.com/posts).filter(url=true)"
+```
