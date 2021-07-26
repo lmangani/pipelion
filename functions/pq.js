@@ -5,6 +5,7 @@ echo "testing \n test12n" | node index.js ".pq('{\"strategy\": regex,\"expressio
 */
 
 const debug = true;
+var strategy = 'json';
 
 module.exports = function fn (input, args) {
 
@@ -12,6 +13,10 @@ module.exports = function fn (input, args) {
   // handle decoder based on strategy
 
   if(debug)console.log('called pq with', input, args);
+
+  if(input.value.strategy == "regex") {
+    strategy = "regex"
+  }
 
   const readline = require('readline');
 
@@ -23,6 +28,6 @@ module.exports = function fn (input, args) {
 
 }
 
-function parser (lineInBuffer) {
+async function parser (lineInBuffer) {
   console.log(typeof lineInBuffer, lineInBuffer)
 }
