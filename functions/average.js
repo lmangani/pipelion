@@ -1,7 +1,10 @@
 /* return an average over all inputs */
+const debug = true
+
 
 module.exports = (data, args) => {
   // specify field names to check
+  if(debug)console.log("average fn", data, args)
 
   for(let param of args) {
     if(param.value.value) {

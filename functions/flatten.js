@@ -17,7 +17,7 @@ Flatten each object from nested to parent_child_child: value
 
 
  */
-const debug = false;
+const debug = true;
 
 module.exports = (input, args) => {
   if(debug)console.log('receiving', input)
