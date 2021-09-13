@@ -14,7 +14,6 @@ jobs:
     - name: Please Star First
       uses: qxip/please-star-first@1.0.0
       with:
-        # GitHub token for use by this action.
         token: ${{ secrets.GITHUB_TOKEN }}
         # Message
         message: Please star this repository to motivate the developers and to get priority.
