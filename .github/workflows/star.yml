@@ -16,4 +16,4 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         # Message
-        message: Please star this repository to motivate the developers and to get priority.
+        message: :star: Please star this repository to motivate the developers and to get priority.
