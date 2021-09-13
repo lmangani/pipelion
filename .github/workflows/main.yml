@@ -4,6 +4,8 @@
   uses: uhyo/please-star-first@v1.0.0
   with:
     # GitHub token for use by this action.
-    token: ${{ secrets.GITHUB_TOKEN }}[0]
+    token: ${{ secrets.GITHUB_TOKEN }}
     # Message
-    message: Let's become friends! Kindly star our repository before opening an issue. Thank You!
+    message: # optional, default is Please star this repository before opening an issue.
+
+Thanks!
