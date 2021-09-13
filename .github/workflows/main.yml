@@ -7,5 +7,3 @@
     token: ${{ secrets.GITHUB_TOKEN }}
     # Message
     message: # optional, default is Please star this repository before opening an issue.
-
-Thanks!
