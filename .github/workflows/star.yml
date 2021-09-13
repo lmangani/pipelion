@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Please Star First
-      uses: qxip/please-star-first
+      uses: qxip/please-star-first@1.0.0
       with:
         # GitHub token for use by this action.
         token: ${{ secrets.GITHUB_TOKEN }}
