@@ -2,22 +2,12 @@
 
 name: Starring Partner
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
-on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Starring Partner'
-        # Input has to be provided for the workflow to run
-        required: true
+on: [issues]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  starcheck:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -28,4 +18,4 @@ jobs:
         # GitHub token for use by this action.
         token: ${{ secrets.GITHUB_TOKEN }}
         # Message
-        message: # optional, default is Please star this repository before opening an issue.
+        message: Please star this repository before opening an issue.
